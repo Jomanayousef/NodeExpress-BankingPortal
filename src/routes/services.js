@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { writeJSON } = require('../data');
-const { accounts } = require('../data');
+const {accounts, writeJSON} = require('../data');
+
 
 
 router.get('/transfer', (req, res) => res.render('transfer'));
@@ -13,8 +13,8 @@ router.post('/transfer', (req, res) => {
     res.render('transfer', {message: 'Transfer Completed'});
 });
 
-router.get('/payment', (req, res) => res.render('payment', { account: accounts.credit
-}));
+router.get('/payment', (req, res) => res.render('payment', { account: accounts.credit}
+));
 
 router.post('/payment', (req, res) => {
     accounts.credit.balance -= req.body.amount;
@@ -23,4 +23,4 @@ router.post('/payment', (req, res) => {
     res.render('payment', { message: 'Payment Successful', account: accounts.credit});
 });
 
-module.exports = router;
+module.exports = router

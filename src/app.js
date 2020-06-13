@@ -4,8 +4,8 @@ const express = require('express');
 
 const app = express();
 
-const accountRoutes = ('./routes/accounts.js');
-const servicesRoutes = ('./routes/services.js');
+const accountRoutes = require('./routes/accounts.js');
+const servicesRoutes =require('./routes/services.js');
 
 const {accounts, users, writeJSON} = require('./data');
 
